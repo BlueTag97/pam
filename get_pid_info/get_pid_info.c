@@ -10,7 +10,13 @@ asmlinkage long sys_get_pid_info(int pid)
 
 	for_each_process(process){
 		if (process->pid == pid){
-			printk("%s\n", process->comm);
+			printk("%d %ld %s\n",
+				process->pid,
+				process->state,
+				// %lu process->saved_kernel_stack,
+				// %d process->session,
+				// %d process->p_pptr->pid,
+				process->comm);
 		}
 	}
 	return 0;
