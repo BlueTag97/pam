@@ -7,6 +7,6 @@ struct pid_info {
 	long state;
 };
 
-asmlinkage long sys_get_pid_info(struct pid_info *ret, int pid);
+asmlinkage long sys_get_pid_info(int pid);
 
 #endif
